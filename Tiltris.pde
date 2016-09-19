@@ -61,6 +61,11 @@ void draw()
       piece.inputKey(DOWN);
     }else if ((val.equals("UP.") == true) && gameOn) {
       piece.inputKey(UP);
+    }else if ((val.equals("START.") == true)) {
+       initialize();
+      //soundGameStart();
+      gameOver = false;
+      gameOn = true;
     }
   } 
 
@@ -118,16 +123,16 @@ void keyPressed() { //I commented this out because it used to map the keyboard t
   //    piece.inputKey(keyCode);
   //    break;
   //  }
-  /*} else*/ if (keyCode == 80) {// "p"
-    if(!gameOn){
-      initialize();
-      //soundGameStart();
-      gameOver = false;
-      gameOn = true;
-    }
-  } else if (keyCode == 77) {// "m"
-    //muteSound();
-  }
+  ///*} else*/ if (keyCode == 80) {// "p"
+  //  if(!gameOn){
+  //    initialize();
+  //    //soundGameStart();
+  //    gameOver = false;
+  //    gameOn = true;
+  //  }
+  //} else if (keyCode == 77) {// "m"
+  //  //muteSound();
+  //}
 }
 
 class Grid {
