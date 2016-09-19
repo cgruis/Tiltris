@@ -1,3 +1,4 @@
+
 /* Program: Tiltis
  *  Authors: Carrina Dong, Caitlin Gruis, Lara Janse van Vuuren
  *  Date: 9/19/2016
@@ -23,6 +24,10 @@ int thresh1=50;
 //Initialize Photocell Variables
 int photocellPin = A1;
 int photocellReading;
+
+//Initialize Flex Sensor Variables
+int flexSensorPin = A2; 
+int flexSensorReading; 
 
 void setup(void) {
 
@@ -58,10 +63,25 @@ void loop() {
   //Photocell Readings
   photocellReading = analogRead(photocellPin);
   //Serial.println(photocellReading);
-  if(photocellReading >2500){
+  if(photocellReading > 2500){
     Serial.print("LEFT.");
     delay(100);
   }
- 
+  if(photocellReading < 25){
+    Serial.print("START.");
+    delay(100);
+  }
+
+  //Flex Sensor Readings
+   flexSensorReading = analogRead(flexSensorPin);
+  if(flexSensorlReading > 2500){
+    Serial.print("LEFT.");
+    delay(100);
+  }
+  if(flexSensorlReading < 2500){
+    Serial.print("RIGHT.");
+    delay(100);
+  }
   delay(300); 
 }
+
